@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="slider.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+    <script type="text/javascript" src="scripts/jQuery.min.js"></script>
+    <title>Charlie's Pethouses</title>
+  </head>
+
+  <body>
+    <p>
+      <h1>Charlie's Pethouses ~ House + Love = Home ~</h1> 
+    </p>
+
+
+
+<nav>
+    <ul id="menu">
+      <li><a href="home.html">Home</a>
+      <li><a href="your_pethouse.html">Your Pethouse</a>
+      <li><a href="about.html">About Charlie</a>
+      <li><a href="gallery.html">Gallery</a>
+      <li><a href="contact_us.html">Contact Us</a>
+    </ul>
+  </nav>
+
+    <div class='main'>
+
+      <ul class='slider'>
+        <li><img src="images/chickens.jpg" alt="Smiley face" height="450" width="750"></li>
+        <li><img src="images/chicken_house.jpg" alt="Smiley face" height="450" width="750"></li>
+        <li><img src="images/hen_house_better.jpg" alt="Smiley face" height="450" width="750"></li>
+      </ul>
+            <ul class='slider2'>
+        <li><img src="images/paris_antique.jpg" alt="Smiley face" height="450" width="200"></li>
+        <li><img src="images/hen_house_better.jpg" alt="Smiley face" height="450" width="200"></li>
+      </ul>
+    </div>
+
+  </body>
+</html>
+
+
+<script language="javascript" type="text/javascript">
+
+
+(function($) { 
+
+  // settings
+  var $slider = $('.slider'); // class or id of carousel slider
+  var $slide = 'li'; // could also use 'img' if you're not using a ul
+  var $transition_time = 1500; // 1 second
+  var $time_between_slides = 3200; // 4 seconds
+
+  function slides(){
+    return $slider.find($slide);
+  }
+
+  slides().fadeOut();
+
+  // set active classes
+  slides().first().addClass('active');
+  slides().first().fadeIn($transition_time);
+
+  // auto scroll 
+  $interval = setInterval(
+    function(){
+      var $i = $slider.find($slide + '.active').index();
+
+      slides().eq($i).removeClass('active');
+      slides().eq($i).fadeOut($transition_time);
+
+      if (slides().length == $i + 1) $i = -1; // loop to start
+
+      slides().eq($i + 1).fadeIn($transition_time);
+      slides().eq($i + 1).addClass('active');
+    }
+    , $transition_time +  $time_between_slides 
+  );
+
+})(jQuery);
+</script>
+

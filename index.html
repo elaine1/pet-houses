@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <link rel="stylesheet" type="text/css" href="carousel.css">
+  <link rel="stylesheet" type="text/css" href="layout.css">
+  <script type="text/javascript" src="scripts/jQuery.min.js"></script>
+  <script type="text/javascript" src="scripts/jCarousel.min.js"></script>
+
+  <title>Charlie's Pethouses</title>
+</head>
+
+<body>
+
+<!-- Site navigation menu -->
+<ul class="navbar">
+  <li><a href="index.html">Home</a>
+  <li><a href="musings.html">Your Pethouse</a>
+  <li><a href="town.html">About Charlie</a>
+  <li><a href="links.html">Contact Us</a>
+</ul>
+
+<!-- Main content -->
+<h1>Charlie's Pethouses</h1>
+
+<p id='div1'>House + Love = Home</p>
+
+<div class="jcarousel">
+    <ul>
+        <li><img src="images/paris_antique.jpg" alt="Smiley face" height="300" width="400"></li>
+        <li><img src="images/hen_house_better.jpg" alt="Smiley face" height="300" width="400"></li>
+    </ul>
+</div>
+
+<div class='prev'>PREV</div>
+<div class='next'>NEXT</div>
+
+</body>
+</html>
+
+
+<script language="javascript" type="text/javascript">
+
+
+(function($) {
+    $(function() {
+        $('.jcarousel').jcarousel()
+        .jcarouselAutoscroll({
+        interval: 2500,
+        target: '+=1',
+        autostart: true
+    });
+
+        $('.jcarousel').jcarousel({
+    wrap: 'circular',
+    speed: 'slow',
+    animation: {
+        duration: 800,
+        easing:   'linear',
+        complete: function() {
+        }
+    }
+});
+
+
+  $('.prev').click(function() {
+      $('.jcarousel').jcarousel('scroll', '-=1');
+  });
+
+  $('.next').click(function() {
+      $('.jcarousel').jcarousel('scroll', '+=1');
+  });
+
+    });
+})(jQuery);
+
+
+
+
+
+
+
+
+</script>

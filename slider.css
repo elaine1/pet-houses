@@ -1,0 +1,30 @@
+.slider {
+  margin: 5px 0;
+  width: 750px; /* Update to your slider width */
+  height: 450px; /* Update to your slider height */
+  position: relative;
+  overflow: hidden;
+}
+
+.slider li {
+  display: none;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+}
+
+.slider2 {
+  margin: 5px 0;
+  width: 200px; /* Update to your slider width */
+  height: 450px; /* Update to your slider height */
+  overflow: hidden;
+  position: absolute; 
+}
+
+.slider2 li {
+  display: none;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+}
+
